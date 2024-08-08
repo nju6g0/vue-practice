@@ -1,6 +1,7 @@
 # vue-practice
 
-This template should help get you started developing with Vue 3 in Vite.
+六角學院-vue新手直播班 作業
+[github page](https://nju6g0.github.io/vue-practice/)
 
 ## Recommended IDE Setup
 
