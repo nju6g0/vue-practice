@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import data from '../assets/data'
+import data from '../service/data'
 
 const columns = [
   {
