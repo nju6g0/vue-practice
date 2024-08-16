@@ -226,6 +226,9 @@ onMounted(() => {
 </template>
 
 <style scoped>
+main {
+  padding-bottom: 40px;
+}
 p {
   word-break: break-all;
   margin: 0;

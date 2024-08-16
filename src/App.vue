@@ -9,6 +9,7 @@ import { RouterLink, RouterView } from 'vue-router'
         <RouterLink to="/">Home</RouterLink>|
         <RouterLink to="/order">第一週-餐點管理工具 </RouterLink>|
         <RouterLink to="/todo">第二週-串接 Todo List API </RouterLink>|
+        <RouterLink to="/orderingService">第三週- 餐點管理工具</RouterLink>
       </nav>
     </header>
 

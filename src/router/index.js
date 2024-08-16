@@ -21,6 +21,11 @@ const router = createRouter({
       path: '/todo',
       name: 'todo',
       component: () => import('../views/TodoView.vue')
+    },
+    {
+      path: '/orderingService',
+      name: 'orderingService',
+      component: () => import('../views/OrderingService.vue')
     }
   ]
 })
