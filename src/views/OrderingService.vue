@@ -4,6 +4,7 @@ import data from '../service/data'
 import MenuCard from '../components/MenuCard.vue'
 import ShoppingCart from '../components/ShoppingCart.vue'
 import OrderedContent from '../components/OrderedContent.vue'
+import NavBar from '../components/NavBar.vue'
 
 const cartItems = ref([])
 const orderedContent = ref({})
@@ -33,6 +34,7 @@ const handleSubmit = ({ memo, total }) => {
 </script>
 
 <template>
+  <NavBar />
   <main>
     <h1>餐點管理工具</h1>
     <a-row>

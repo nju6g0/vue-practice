@@ -1,5 +1,6 @@
 <script setup>
 import { onMounted, ref, createVNode } from 'vue'
+import NavBar from '../components/NavBar.vue'
 import { COOKIE_KEY } from '../constants'
 import { getToken } from '../service/common'
 import UsersService from '../service/users.service'
@@ -137,6 +138,7 @@ onMounted(() => {
 </script>
 
 <template>
+  <NavBar />
   <main>
     <div>
       <h3>註冊</h3>

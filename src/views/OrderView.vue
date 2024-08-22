@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import data from '../service/data'
+import NavBar from '../components/NavBar.vue'
 
 const columns = [
   {
@@ -62,6 +63,7 @@ const handleCancel = (id) => {
 </script>
 
 <template>
+  <NavBar />
   <h1>六角學院 vue 直播班 - 第一週作業</h1>
   <a-table :data-source="menu" :columns="columns">
     <template #bodyCell="{ column, record }">
