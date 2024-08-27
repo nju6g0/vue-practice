@@ -1,6 +1,7 @@
 <script setup>
 import { onMounted, ref, computed } from 'vue'
 import { useRouter } from 'vue-router'
+import { message } from 'ant-design-vue'
 import { PlusOutlined } from '@ant-design/icons-vue'
 
 import TodoListItem from '../components/ListItem.vue'
@@ -22,13 +23,13 @@ const loading = ref(false)
 const user = ref()
 const todos = ref([])
 const newTodo = ref('')
-const errorMessage = ref('')
 
 const naviToLogin = () => {
   router.push({
     path: `/login`
   })
 }
+
 async function addTodo() {
   loading.value = true
   try {
@@ -37,17 +38,16 @@ async function addTodo() {
     todos.value = newTodos.data.data
     newTodo.value = ''
   } catch (err) {
-    errorMessage.value = err.response.data.message
+    message.error({ content: err.response.data.message, duration: 2 })
   }
   loading.value = false
 }
 const handleAddTodo = () => {
   if (loading.value) return
   if (newTodo.value.trim().length === 0) {
-    errorMessage.value = '內容不可為空'
+    message.error({ content: '內容不可為空', duration: 3 })
     return
   }
-  errorMessage.value = ''
   addTodo()
 }
 async function logout() {
@@ -68,7 +68,7 @@ async function deleteTodo({ id }) {
     const index = todos.value.findIndex((el) => el.id === id)
     todos.value.splice(index, 1)
   } catch (err) {
-    errorMessage.value = err.response.data.message
+    message.error({ content: err.response.data.message, duration: 2 })
   }
   loading.value = false
 }
@@ -81,7 +81,7 @@ async function toggleTodo({ id, status }) {
     const index = todos.value.findIndex((el) => el.id === id)
     todos.value[index].status = status
   } catch (err) {
-    errorMessage.value = err.response.data.message
+    message.error({ content: err.response.data.message, duration: 2 })
   }
   loading.value = false
 }
@@ -91,13 +91,13 @@ async function editTodo({ id, content }) {
   loading.value = true
   try {
     await TodosService.editTodo({
-      id,
+      id: '1234',
       content
     })
     const index = todos.value.findIndex((el) => el.id === id)
     todos.value[index].content = content
   } catch (err) {
-    errorMessage.value = err.response.data.message
+    message.error({ content: err.response.data.message, duration: 2 })
   }
   loading.value = false
 }
@@ -115,10 +115,10 @@ onMounted(() => {
     try {
       const todoRes = await TodosService.getTodos()
       todos.value = todoRes.data.data
-      isInitialing.value = false
     } catch (err) {
-      errorMessage.value = err.response.data.message
+      message.error({ content: err.response.data.message, duration: 2 })
     }
+    isInitialing.value = false
   }
   async function checkUser() {
     try {
@@ -155,7 +155,6 @@ onMounted(() => {
       </div>
       <div v-else>
         <div>
-          <a-alert v-if="errorMessage" :message="errorMessage" type="error" show-icon />
           <a-input-search
             v-model:value="newTodo"
             placeholder="新增待辦事項"
@@ -238,6 +237,7 @@ nav {
   border-radius: 20px;
   border: 1px solid #ccc;
 }
+
 @media (max-width: 576px) {
   main {
     background-image: linear-gradient(175deg, #ffd370 100%, #fff 0%);
