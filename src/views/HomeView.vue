@@ -17,6 +17,9 @@
         <RouterLink to="/nest">第四週- 路由</RouterLink>
       </li>
       <li>
+        <RouterLink to="/counter">第四週- pinia 練習</RouterLink>
+      </li>
+      <li>
         <RouterLink to="/myTodos">最終挑戰 - Todolist API 整合證書任務</RouterLink>
       </li>
       <li>
@@ -28,3 +31,16 @@
     </ul>
   </main>
 </template>
+
+<style scoped>
+main {
+  padding: 20px 0;
+}
+h1 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+li {
+  margin-top: 10px;
+}
+</style>

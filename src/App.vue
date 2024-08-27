@@ -8,8 +8,4 @@ import { RouterView } from 'vue-router'
   </div>
 </template>
 
-<style scoped>
-.wrapper {
-  padding: 0 40px;
-}
-</style>
+<style scoped></style>
