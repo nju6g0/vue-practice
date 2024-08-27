@@ -1,0 +1,1 @@
+import{x as t,h as s,c as n,o as u,b as o}from"./index-CPtHe2_p.js";const a=o("h1",null,"oops!! 404 not found",-1),c=o("p",null,"即將轉址前往首頁…",-1),_=[a,c],h={__name:"NotFound",setup(r){const e=t();return s(()=>{setTimeout(()=>{e.push("/")},2e3)}),(l,p)=>(u(),n("main",null,_))}};export{h as default};
