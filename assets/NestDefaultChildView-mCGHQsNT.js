@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as c,b as o}from"./index-DPcHszT_.js";const s={},n=o("h1",null,"Default child",-1),a=[n];function _(l,r){return c(),t("main",null,a)}const d=e(s,[["render",_]]);export{d as default};
