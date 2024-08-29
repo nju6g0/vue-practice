@@ -91,7 +91,7 @@ async function editTodo({ id, content }) {
   loading.value = true
   try {
     await TodosService.editTodo({
-      id: '1234',
+      id,
       content
     })
     const index = todos.value.findIndex((el) => el.id === id)
